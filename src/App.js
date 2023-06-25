@@ -2,13 +2,17 @@
 import styled from 'styled-components'
 import Header from "./components/Header";
 import GlobalStyles from "./GlobalStyle";
-
+import GistList from './screens/GistList';
+import { GistContextProvider } from './context';
 const App = () => {
   return (
-    <Wrapper className="App" data-testid="app">
-      <Header />
-      <GlobalStyles />
-    </Wrapper>
+    <GistContextProvider>
+      <Wrapper className="App" data-testid="app">
+        <Header />
+        <GistList />
+        <GlobalStyles />
+      </Wrapper>
+    </GistContextProvider>
   );
 }
 

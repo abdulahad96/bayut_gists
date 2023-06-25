@@ -1,13 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 import Octicon from 'react-octicon'
+import { GistContext } from '../context'
 
 const Search = () => {
+  const { getUserGist } = useContext(GistContext);
+  const searchComplete = async (event) => {
+    const value = event.target.value
+    getUserGist(value)
+  }
   return (
     <Wrapper>
       <InputBox>
-      <Octicon name="search" />
-      <Input placeholder="Search Gists for the username"/>
+        <Octicon name="search" />
+        <Input onChange={searchComplete} placeholder="Search Gists for the username" />
       </InputBox>
     </Wrapper>
   )

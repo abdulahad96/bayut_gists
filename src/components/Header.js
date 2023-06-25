@@ -6,7 +6,7 @@ import Search from './Search';
 function Header() {
   return (
     <Wrapper>
-      <Octicon name="mark-github" mega/>
+      <Octicon name="mark-github" mega />
       <Search />
     </Wrapper>
   )
@@ -21,6 +21,8 @@ const Wrapper = styled.div`
   line-height: 1.5;
   display: flex;
   align-items: center;
+  position: sticky;
+  top: 0;
 `;
 
 export default Header
